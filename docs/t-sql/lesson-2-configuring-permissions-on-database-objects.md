@@ -49,7 +49,7 @@ By default, administrators on your computer have full access to [!INCLUDE[ssNoVe
 In a Query Editor window of [!INCLUDE[ssManStudioFull](../includes/ssmanstudiofull-md.md)], type and execute the following code replacing `computer_name` with the name of your computer. `FROM WINDOWS` indicates that Windows will authenticate the user. The optional `DEFAULT_DATABASE` argument connects `Mary` to the `TestData` database, unless her connection string indicates another database. This statement introduces the semicolon as an optional termination for a [!INCLUDE[tsql](../includes/tsql-md.md)] statement.
   
   ```sql  
-  CREATE LOGIN [computer_name\Mary]  
+  CREATE LOGIN [<computer_name>\Mary]  
       FROM WINDOWS  
       WITH DEFAULT_DATABASE = [TestData];  
   GO  
@@ -73,7 +73,7 @@ Type and execute the following statements (replacing `computer_name` with the na
  USE [TestData];  
  GO  
  
- CREATE USER [Mary] FOR LOGIN [computer_name\Mary];  
+ CREATE USER [Mary] FOR LOGIN [<computer_name>\Mary];  
  GO    
  ```  
   
